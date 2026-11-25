@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 UTC = timezone.utc
 def utcnow(): return datetime.now(UTC)
 
-app = Flask(__name__, static_folder='../frontend', static_url_path='')
+app = Flask(__name__, static_folder='.', static_url_path='')
 database_url=os.getenv('DATABASE_URL','sqlite:///trusttrack.db')
 if database_url.startswith('postgres://'):
     database_url='postgresql://'+database_url[len('postgres://'):]
